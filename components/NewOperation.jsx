@@ -1,4 +1,5 @@
 export default function NewOperation(){
+
     return(
         <div className='w-full h-12 border border-violet-700 m-2 flex flex-nowrap'>
         <div className='bg-white w-full'></div> 
