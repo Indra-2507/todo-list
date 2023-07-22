@@ -4,8 +4,8 @@ export default function Select (){
         <label className='py-full flex flex-wrap text-xs' htmlFor="seleccionar">Seleccionar</label>
         <select className='w-full' name="" id="">
         <option value="todas">Todas</option>
-        <option name="completas" id="">Completas</option>
-        <option name="incompletas" id="">Incompletas</option>
+        <option name="completas" value="completas">Completas</option>
+        <option name="incompletas" value="incompletas">Incompletas</option>
         </select>
           </div>
     )

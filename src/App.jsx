@@ -1,23 +1,17 @@
 import { useState } from 'react'
-import Nav from '../components/Nav'
-import EnterOperation from '../components/EnterOperation'
-import Select from '../components/select'
-import NewOperation from '../components/NewOperation'
+import Nav from './components/Nav'
+import AddTask from './components/AddTask'
+
 
 function App() {
+  const [task, setTask]= useState("");
+
   
   return (
-  <div className='bg-gradient-to-r from-violet-500 to-fuchsia-500'>
-  <Nav />
-  <div className='flex justify-around flex-wrap'>
-  <form className='w-full m-2 flex flex-wrap sm: flex-nowrap'>
-    <EnterOperation />
-    <Select />
-  </form>
-    <NewOperation />
-  </div> 
-  </div>
-    
+  <>
+  <Nav />  
+  <AddTask />
+  </>   
   )
 }
 
