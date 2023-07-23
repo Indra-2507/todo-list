@@ -18,8 +18,7 @@ window.localStorage.setItem("task", JSON.stringify(allNotes))
 
 
 const handleChange = (e)=>{
-   setTask(e.target.value)
-   
+   setTask(e.target.value)  
   };
 
   const handleSubmit =(e)=>{
@@ -33,8 +32,7 @@ const handleChange = (e)=>{
   return(
       <>
       <form
-      onSubmit={handleSubmit}
-      
+      onSubmit={handleSubmit}      
       >
       <div className='flex justify-around '>
       <div className='border-2 border-blue-600 bg-white w-full m-2'>
@@ -64,7 +62,6 @@ const handleChange = (e)=>{
         <NewTask 
         key={index} 
         task={task}
-        
         />)
         
       } )
