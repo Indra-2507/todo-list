@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { useEffect } from "react";
 import NewTask from "./NewTask"
 import {AiOutlineSend} from 'react-icons/ai'
 import Select from "./Select";
@@ -9,26 +8,32 @@ export default function AddTask(){
 
 const [task, setTask]= useState("")
 
+
 const [allNotes, setAllNotes] = useState(()=>{
   const tasksLocal=window.localStorage.getItem("task")
   return tasksLocal ? JSON.parse(tasksLocal) : []
 }
 )
-window.localStorage.setItem("task", JSON.stringify(allNotes)) 
-
-
 const handleChange = (e)=>{
    setTask(e.target.value)  
   };
 
   const handleSubmit =(e)=>{
     e.preventDefault()
-    setAllNotes([...allNotes, task]) 
- 
-  }
-  // {window.localStorage.setItem("task", JSON.stringify(allNotes)) }
- //lo guarda en el local pero no se mantiene
- 
+      if (task.trim() !== "") {
+        const newTask = {
+          id: Date.now(), 
+          text: task.trim(),
+          // checked: check ? check : "",
+        };
+
+        setAllNotes((prevNotes) => [...prevNotes, newTask]);
+        setTask(""); 
+      }
+    };
+  
+    window.localStorage.setItem("task", JSON.stringify(allNotes)) 
+  
   return(
       <>
       <form
@@ -51,22 +56,24 @@ const handleChange = (e)=>{
       <button 
         type="submit"
         className='bg-blue-700 text-white rounded-lg w-1/5 m-4 p-2 flex justify-center items-center gap-2'>
-          Send 
-          <AiOutlineSend />
-          </button>
+        Send 
+        <AiOutlineSend />
+      </button>
       </div>
-      </form>  
-    
-      {allNotes.map((task, index)=>{
+      </form>   
+
+      {allNotes.map((note)=>{
         return (    
         <NewTask 
-        key={index} 
-        task={task}
-        />)
-        
-      } )
+        key={note.id} 
+        task={note.text}
+        id={note.id}
+        // checked={note.checked}
+        setAllNotes={setAllNotes}
+        />
+        )  
+      })
       }
-     
   </> 
   )
 }
