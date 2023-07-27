@@ -8,7 +8,6 @@ export default function AddTask(){
 
 const [task, setTask]= useState("")
 
-
 const [allNotes, setAllNotes] = useState(()=>{
   const tasksLocal=window.localStorage.getItem("task")
   return tasksLocal ? JSON.parse(tasksLocal) : []
@@ -24,16 +23,44 @@ const handleChange = (e)=>{
         const newTask = {
           id: Date.now(), 
           text: task.trim(),
-          // checked: check ? check : "",
+          value: "toDo"
         };
 
         setAllNotes((prevNotes) => [...prevNotes, newTask]);
         setTask(""); 
       }
     };
+    const handleCheckButtonClick = (taskId) => {
+      setAllNotes((prevNotes) =>
+        prevNotes.map((note) =>
+        note.id === taskId
+        ? { ...note, value: note.value === "toDo" ? "done" : "toDo" }
+        : note
+        )
+      );
+    };  
+
+    const tasksLocal = JSON.stringify(allNotes);
+  window.localStorage.setItem("task", tasksLocal);
+
   
-    window.localStorage.setItem("task", JSON.stringify(allNotes)) 
-  
+  const [filter, setFilter]=useState({
+    value: 'all'
+})
+
+const filterTask =(task)=>{
+return task.filter(t=>
+t.value === 'all' || 
+t.value === filter.value)
+}
+const handleChangeSelect=(e)=>{
+  setFilter(e.target.value)
+  onChange((prevState) =>({
+    ...prevState,
+    setFilter: e.target.value
+  }))
+}
+
   return(
       <>
       <form
@@ -50,7 +77,12 @@ const handleChange = (e)=>{
       value= {task}
       placeholder='Ingrese su tarea' aria-label='Tarea'/> 
       </div>
-      <Select />
+      <Select
+      // onChange={setFilter}
+      onChange ={handleChangeSelect}
+      // task={task}    
+      // onChange={filterTask} 
+       />
       </div>
       <div className="flex justify-center">
       <button 
@@ -62,18 +94,20 @@ const handleChange = (e)=>{
       </div>
       </form>   
 
-      {allNotes.map((note)=>{
+       {allNotes.map((note)=>{
         return (    
         <NewTask 
         key={note.id} 
         task={note.text}
         id={note.id}
-        // checked={note.checked}
+        value={note.value}
         setAllNotes={setAllNotes}
+        onCheckButtonClick={handleCheckButtonClick}
         />
         )  
       })
       }
   </> 
-  )
+
+  );
 }

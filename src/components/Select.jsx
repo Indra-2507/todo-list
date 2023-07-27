@@ -1,31 +1,30 @@
 import { useState } from "react"
-import NewTask from "./NewTask"
+import ModalWindows from "./ModalWindows"
 
-export default function Select (){
-    
+export default function Select ({setFilter, onChange}){
 
-    const [selectValue, setSelectValue]= useState("")
-   
-    const handleSelectFilter=(e)=>{
-        console.log(e.target.value)
-        setSelectValue(e.target.value)
-
-    }
-    
     return (
         <>
         <div className='border-2 border-blue-600 bg-white w-full m-2'>
         <label className='py-full flex flex-wrap text-xs' htmlFor="seleccionar">Seleccionar</label>
         <select 
-        onChange={handleSelectFilter}
-        value={selectValue}
-        className='w-full' name="" id="">
-        <option value="all">Todas</option>
-        <option name="completes" value="completas">Completas</option>
-        <option name="incompletes" value="incompletas">Incompletas</option>
+        
+        className='w-full'>
+        onChange={setFilter}
+        <option 
+        value="all">
+            Todas</option>
+        <option 
+        name="done" 
+        value="done">
+            Completas</option>
+        <option 
+        name="toDo" 
+        value="toDo">
+            Incompletas</option>
         </select>
           </div>
-    </>
-    
+          <ModalWindows />
+    </>    
     )
 }
