@@ -1,16 +1,17 @@
-import { useState } from "react"
-import ModalWindows from "./ModalWindows"
-
-export default function Select ({setFilter, onChange}){
-
+export default function Select ({ setFiltroSeleccionado }){
+  
+    const handleFiltroChange = (e) => {
+        setFiltroSeleccionado(e.target.value)
+      }
+    
     return (
         <>
         <div className='border-2 border-blue-600 bg-white w-full m-2'>
         <label className='py-full flex flex-wrap text-xs' htmlFor="seleccionar">Seleccionar</label>
         <select 
-        
-        className='w-full'>
-        onChange={setFilter}
+        className='w-full'
+        onChange={handleFiltroChange} 
+        >
         <option 
         value="all">
             Todas</option>
@@ -24,7 +25,6 @@ export default function Select ({setFilter, onChange}){
             Incompletas</option>
         </select>
           </div>
-          <ModalWindows />
     </>    
     )
 }

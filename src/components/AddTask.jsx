@@ -13,6 +13,8 @@ const [allNotes, setAllNotes] = useState(()=>{
   return tasksLocal ? JSON.parse(tasksLocal) : []
 }
 )
+const [filtroSeleccionado, setFiltroSeleccionado] = useState('all');
+
 const handleChange = (e)=>{
    setTask(e.target.value)  
   };
@@ -39,27 +41,15 @@ const handleChange = (e)=>{
         )
       );
     };  
-
+    const elementosFiltrados = allNotes.filter((note) => {
+      if (filtroSeleccionado === 'all') {
+        return true
+      } else {
+        return note.value === filtroSeleccionado;
+      }
+    })
     const tasksLocal = JSON.stringify(allNotes);
   window.localStorage.setItem("task", tasksLocal);
-
-  
-  const [filter, setFilter]=useState({
-    value: 'all'
-})
-
-const filterTask =(task)=>{
-return task.filter(t=>
-t.value === 'all' || 
-t.value === filter.value)
-}
-const handleChangeSelect=(e)=>{
-  setFilter(e.target.value)
-  onChange((prevState) =>({
-    ...prevState,
-    setFilter: e.target.value
-  }))
-}
 
   return(
       <>
@@ -78,10 +68,9 @@ const handleChangeSelect=(e)=>{
       placeholder='Ingrese su tarea' aria-label='Tarea'/> 
       </div>
       <Select
-      // onChange={setFilter}
-      onChange ={handleChangeSelect}
-      // task={task}    
-      // onChange={filterTask} 
+      allNotes={allNotes}
+      filtroSeleccionado={filtroSeleccionado}
+      setFiltroSeleccionado={setFiltroSeleccionado}
        />
       </div>
       <div className="flex justify-center">
@@ -94,19 +83,28 @@ const handleChangeSelect=(e)=>{
       </div>
       </form>   
 
-       {allNotes.map((note)=>{
-        return (    
-        <NewTask 
-        key={note.id} 
-        task={note.text}
-        id={note.id}
-        value={note.value}
-        setAllNotes={setAllNotes}
-        onCheckButtonClick={handleCheckButtonClick}
-        />
+       {elementosFiltrados.map((note)=>{
+        return (   
+          <NewTask
+          key={note.id}
+          task={note.text}
+          id={note.id}
+          value={note.value}
+          setAllNotes={setAllNotes}
+          onCheckButtonClick={handleCheckButtonClick}
+        /> 
+        // <NewTask 
+        // key={note.id} 
+        // task={note.text}
+        // id={note.id}
+        // value={note.value}
+        // setAllNotes={setAllNotes}
+        // onCheckButtonClick={handleCheckButtonClick}
+        // />
         )  
       })
       }
+      
   </> 
 
   );

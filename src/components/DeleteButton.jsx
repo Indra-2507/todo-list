@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
+import ModalWindows from './ModalWindows';
 
 export default function DeleteButton({ setAllNotes, id }) {
   const handleButtonDelete = () => {
@@ -7,9 +8,12 @@ export default function DeleteButton({ setAllNotes, id }) {
   };
 
   return (
+    <>
     <button className='bg-red-300 w-20' 
     onClick={handleButtonDelete}>
       <AiOutlineDelete className='m-auto text-2xl' />
     </button>
+    <ModalWindows />
+    </>
   );
 }
