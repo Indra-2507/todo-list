@@ -13,7 +13,7 @@ const [allNotes, setAllNotes] = useState(()=>{
   return tasksLocal ? JSON.parse(tasksLocal) : []
 }
 )
-const [filtroSeleccionado, setFiltroSeleccionado] = useState('all');
+const [selectedFilter, setSelectedFilter] = useState('all');
 
 const handleChange = (e)=>{
    setTask(e.target.value)  
@@ -39,13 +39,14 @@ const handleChange = (e)=>{
         ? { ...note, value: note.value === "toDo" ? "done" : "toDo" }
         : note
         )
-      );
-    };  
-    const elementosFiltrados = allNotes.filter((note) => {
-      if (filtroSeleccionado === 'all') {
+      )
+    }  
+    
+    const filteredElements = allNotes.filter((note) => {
+      if (selectedFilter === 'all') {
         return true
       } else {
-        return note.value === filtroSeleccionado;
+        return note.value === selectedFilter;
       }
     })
     const tasksLocal = JSON.stringify(allNotes);
@@ -69,8 +70,8 @@ const handleChange = (e)=>{
       </div>
       <Select
       allNotes={allNotes}
-      filtroSeleccionado={filtroSeleccionado}
-      setFiltroSeleccionado={setFiltroSeleccionado}
+      selectedFilter={selectedFilter}
+      setSelectedFilter={setSelectedFilter}
        />
       </div>
       <div className="flex justify-center">
@@ -83,7 +84,7 @@ const handleChange = (e)=>{
       </div>
       </form>   
 
-       {elementosFiltrados.map((note)=>{
+       {filteredElements.map((note)=>{
         return (   
           <NewTask
           key={note.id}
@@ -93,18 +94,9 @@ const handleChange = (e)=>{
           setAllNotes={setAllNotes}
           onCheckButtonClick={handleCheckButtonClick}
         /> 
-        // <NewTask 
-        // key={note.id} 
-        // task={note.text}
-        // id={note.id}
-        // value={note.value}
-        // setAllNotes={setAllNotes}
-        // onCheckButtonClick={handleCheckButtonClick}
-        // />
         )  
       })
       }
-      
   </> 
 
   );

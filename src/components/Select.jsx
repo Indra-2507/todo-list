@@ -1,7 +1,7 @@
-export default function Select ({ setFiltroSeleccionado }){
+export default function Select ({ setSelectedFilter }){
   
     const handleFiltroChange = (e) => {
-        setFiltroSeleccionado(e.target.value)
+        setSelectedFilter(e.target.value)
       }
     
     return (

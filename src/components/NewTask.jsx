@@ -30,6 +30,7 @@ export default function NewTask({task, id, setAllNotes,value,  onCheckButtonClic
         task={task}
         />
         <DeleteButton 
+        task={task}
         id={id} 
         setAllNotes={setAllNotes} 
         />       
