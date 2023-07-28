@@ -6,7 +6,7 @@ import {AiOutlineCheckCircle} from 'react-icons/ai'
 export default function CheckButton ({clickButton, value, id}){
   const [checkStyle, setCheckStyle] =useState('bg-green-300 w-20')
     const [check, setCheck]= useState(
-      value === "done",
+      value === "toDo",
 
      )
    
