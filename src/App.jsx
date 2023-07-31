@@ -1,18 +1,14 @@
-import { useState } from 'react'
-import Nav from './components/Nav'
-import AddTask from './components/AddTask'
-
+import Nav from "./components/Nav";
+import TaskContainer from "./components/TaskContainer";
 
 function App() {
-  const [task, setTask]= useState("");
-
   
   return (
-  <>
-  <Nav />  
-  <AddTask />
-</>   
-  )
+    <>
+      <Nav />
+      <TaskContainer />
+    </>
+  );
 }
 
-export default App
+export default App;
