@@ -15,7 +15,7 @@ const[openAlert, setOpenAlert] = useState(false)
   // if (!isOpen) return null
 
   const handleButtonDelete = () => {
-    setOpenAlert(true)
+      setOpenAlert(true)
       setAllNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
       localStorage.removeItem(`buttonCheck_${id}`);
   };
