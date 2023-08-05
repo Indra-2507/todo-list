@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.borelType {
+    font-family: 'Borel', cursive;
+  }

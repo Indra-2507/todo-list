@@ -19,7 +19,6 @@ export default function TaskContainer() {
       )
     );
   };
-
   const filteredElements = allNotes.filter((note) => {
     if (selectedFilter === "all") {
       return true;
@@ -28,16 +27,19 @@ export default function TaskContainer() {
     }
   });
 
+  const nextPage = () => {
+    console.log("next");
+  };
+
+  const prevPage = () => {
+    console.log("prev");
+  };
   const tasksLocal = JSON.stringify(allNotes);
   localStorage.setItem("task", tasksLocal);
 
   return (
-    <section 
-    className="flex flex-col grow">
-      <Form 
-      setAllNotes={setAllNotes}
-      setSelectedFilter={setSelectedFilter}
-      />
+    <section className="">
+      <Form setAllNotes={setAllNotes} setSelectedFilter={setSelectedFilter} />
       {filteredElements.map((note) => {
         return (
           <NewTask

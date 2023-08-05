@@ -1,12 +1,14 @@
 import Nav from "./components/Nav";
 import TaskContainer from "./components/TaskContainer";
+import Footer from "./components/Footer";
 
 function App() {
   
   return (
-    <section className=' '>
+    <section className="flex flex-col h-full grow relative">
       <Nav />
       <TaskContainer />
+      <Footer />
     </section>
   );
 }

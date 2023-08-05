@@ -1,30 +1,23 @@
-import { useState } from "react";
+ import { useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
-import Alert from "./Alert";
+
 
 export default function ModalWindows({
-  isOpen,
   onClose,
   setAllNotes,
   id,
   task,
+  isOpen
 }) {
 
-const[openAlert, setOpenAlert] = useState(false)
-
-  // if (!isOpen) return null
-
   const handleButtonDelete = () => {
-      setOpenAlert(true)
       setAllNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
-      localStorage.removeItem(`buttonCheck_${id}`);
   };
-  
 
-  return !isOpen ? <><Alert task={task} isOpen={openAlert} /></> :  (
-
+  return(
     <>
-      <div
+    {isOpen &&(
+           <div
         id="modal-window"
         className=" relative z-10"
         aria-labelledby="modal-title"
@@ -90,6 +83,7 @@ const[openAlert, setOpenAlert] = useState(false)
           </div>
         </div>
       </div>
+         )}
     </>
-  );
+  )
 }

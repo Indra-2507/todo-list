@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import ModalWindows from "./ModalWindows";
 
-export default function Buttons({ setAllNotes, id, task }) {
+export default function DeleteButton({ setAllNotes, id, task }) {
 
   const [openModal, setOpenModal] = useState(false);
 
@@ -13,11 +13,13 @@ export default function Buttons({ setAllNotes, id, task }) {
   const handleCloseModal = () => {
     setOpenModal(false);
   };
+  const handleButtonDelete = () => {
+    setAllNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
+  }
 
   return (
     <>
-      <button 
-      className="bg-red-300 w-20" 
+      <button className="bg-red-300 w-20" 
       onClick={handleOpenModal}>
         <AiOutlineDelete 
         className="m-auto text-2xl" />
