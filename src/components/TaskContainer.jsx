@@ -27,18 +27,12 @@ export default function TaskContainer() {
     }
   });
 
-  const nextPage = () => {
-    console.log("next");
-  };
 
-  const prevPage = () => {
-    console.log("prev");
-  };
   const tasksLocal = JSON.stringify(allNotes);
   localStorage.setItem("task", tasksLocal);
 
   return (
-    <section className="">
+    <section className="flex flex-col grow mb-[50px]">
       <Form setAllNotes={setAllNotes} setSelectedFilter={setSelectedFilter} />
       {filteredElements.map((note) => {
         return (

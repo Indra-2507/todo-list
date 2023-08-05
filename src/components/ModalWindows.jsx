@@ -18,8 +18,7 @@ export default function ModalWindows({
     <>
     {isOpen &&(
            <div
-        id="modal-window"
-        className=" relative z-10"
+        className="relative z-10"
         aria-labelledby="modal-title"
         role="dialog"
         aria-modal="true"
@@ -27,12 +26,12 @@ export default function ModalWindows({
         <div className="fixed inset-0 bg-transparent backdrop-blur-sm bg-opacity-75 transition-opacity">
           <div className="fixed inset-0 z-10 overflow-y-auto">
             <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-              <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+              <div className="relative transform overflow-hidden rounded-lg bg-[#FEEBC3] text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                 <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                   <div className="sm:flex sm:items-start">
-                    <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                    <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#3F7EA1] sm:mx-0 sm:h-10 sm:w-10">
                       <div
-                        className="h-6 w-6 text-red-600 text-center flex justify-center items-center text-xl"
+                        className="h-6 w-6  text-center flex justify-center items-center text-xl"
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth="1.5"
@@ -52,7 +51,7 @@ export default function ModalWindows({
                       <div className="mt-2">
                         <p className="text-sm text-gray-500">
                           ¿Estás seguro de querer eliminar "
-                          <span className="modal-text text-red-600 font-bold">
+                          <span className="modal-text text-[#3F7EA1] font-bold">
                             {task}
                           </span>
                           "? Toda la información será removida de forma
@@ -66,7 +65,7 @@ export default function ModalWindows({
                   <button
                     onClick={handleButtonDelete}
                     type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                    className="inline-flex w-full justify-center rounded-md bg-[#3F7EA1] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#071C3B] sm:ml-3 sm:w-auto"
                   >
                     Eliminar
                   </button>

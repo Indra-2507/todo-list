@@ -19,7 +19,7 @@ export default function DeleteButton({ setAllNotes, id, task }) {
 
   return (
     <>
-      <button className="bg-red-300 w-20" 
+      <button className="bg-[#3F7EA1] w-20" 
       onClick={handleOpenModal}>
         <AiOutlineDelete 
         className="m-auto text-2xl" />

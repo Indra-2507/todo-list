@@ -26,7 +26,7 @@ export default function Form ({
     return (
         <form onSubmit={handleSubmit}>
         <div className="flex justify-around flex-wrap sm:flex-nowrap">
-          <div className="border-2 border-blue-600 bg-white w-full m-2">
+          <div className="border-2 border-[#3F7EA1] bg-white w-full m-2">
             <label className="py-full flex flex-wrap text-xs" htmlFor="tarea">
               Tarea
             </label>
@@ -47,7 +47,7 @@ export default function Form ({
         <div className="flex justify-center">
           <button
             type="submit"
-            className="bg-blue-700 text-white rounded-lg w-1/5 m-4 p-2 flex justify-center items-center gap-2"
+            className="bg-[#071C3B] text-white rounded-lg w-1/5 m-4 p-2 flex justify-center items-center gap-2"
           >
             Send
             <AiOutlineSend />

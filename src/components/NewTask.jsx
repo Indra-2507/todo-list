@@ -20,19 +20,19 @@ export default function NewTask({
   return (
     <div
       id={id}
-      className=" h-12 border border-violet-700 m-2 flex flex-nowrap"
+      className=" h-12 border border-[#071C3B] m-2 flex flex-nowrap"
     >
       <div
         className={
           check
-            ? "bg-gray-300 w-full text-xl line-through flex justify-between"
+            ? "bg-[#FEEBC3] w-full text-xl line-through flex justify-between"
             : "bg-white w-full text-xl flex justify-between"
         }
       >
         <span className="p-2">{task}</span>
         <button
           className={
-            check ? "bg-gray-400 w-20 px-0 h-full" : "bg-green-300 w-20"
+            check ? "bg-[#FEEBC3] w-20 px-0 h-full border-l-2 border-[#3F7EA1]" : "bg-[#D99951] w-20"
           }
           onClick={handleButtonCheck}
           id={id}

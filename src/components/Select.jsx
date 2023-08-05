@@ -8,7 +8,7 @@ export default function Select({ setSelectedFilter }) {
 
   return (
     <>
-      <div className="border-2 border-blue-600 bg-white w-full m-2">
+      <div className="border-2 border-[#FEEBC3] bg-white w-full m-2">
         <label className="py-full flex flex-wrap text-xs" htmlFor="seleccionar">
           Seleccionar
         </label>
