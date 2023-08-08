@@ -7,7 +7,7 @@ import {
 } from "react-icons/ai";
 export default function Footer() {
   return (
-    <footer>
+    <footer className="mb-2">
       <div>
         <p className="borelType flex justify-center md:text-xl text-[#3F7EA1]">
           Hecho con{" "}
