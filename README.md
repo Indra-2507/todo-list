@@ -34,9 +34,9 @@ Tocando nuevamente el botón, la tarea volverá a definirse como tarea por hacer
 ### Filtrando las tareas
 
 El usuario podrá seleccionar para ver solamente las tareas hechas o las tareas por hacer a través del selector que se encuentra en la parte superior derecha de la pantalla.
-![Completas seleccionadas](https://github.com/Indra-2507/todo-list/assets/121632953/eaaf132b-b79e-4dc6-a945-4d1e40bca5b2)
 
-![Uploading Incompletas seleccionadas.png…]()
+![Completas seleccionadas](https://github.com/Indra-2507/todo-list/assets/121632953/eaaf132b-b79e-4dc6-a945-4d1e40bca5b2)
+![Incompletas seleccionadas](https://github.com/Indra-2507/todo-list/assets/121632953/e5a479c0-fe02-4ecd-92a7-71043ec07441)
 
 ### Eliminando tareas
 
