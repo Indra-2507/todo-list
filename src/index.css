@@ -3,5 +3,14 @@
 @tailwind utilities;
 
 .borelType {
-    font-family: 'Borel', cursive;
-  }
+  font-family: "Borel", cursive;
+}
+
+.eduSaType {
+  font-family: "Edu SA Beginner", cursive;
+}
+
+.eduSaTypeTitle {
+  font-family: "Edu SA Beginner", cursive;
+  font-weight: 500;
+}

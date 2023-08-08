@@ -18,10 +18,7 @@ export default function NewTask({
   };
 
   return (
-    <div
-      id={id}
-      className=" h-12 border border-[#071C3B] m-2 flex flex-nowrap"
-    >
+    <div id={id} className=" h-12 border border-[#071C3B] m-2 flex flex-nowrap">
       <div
         className={
           check
@@ -32,7 +29,9 @@ export default function NewTask({
         <span className="p-2">{task}</span>
         <button
           className={
-            check ? "bg-[#FEEBC3] w-20 px-0 h-full border-l-2 border-[#3F7EA1]" : "bg-[#D99951] w-20"
+            check
+              ? "bg-[#FEEBC3] w-20 px-0 h-full border-l-2 border-[#3F7EA1]"
+              : "bg-[#D99951] w-20"
           }
           onClick={handleButtonCheck}
           id={id}

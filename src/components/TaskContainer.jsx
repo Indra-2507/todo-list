@@ -1,6 +1,6 @@
-import { useState } from "react";
 import NewTask from "./NewTask";
 import Form from "./Form";
+import { useState } from "react";
 
 export default function TaskContainer() {
   const [allNotes, setAllNotes] = useState(() => {
@@ -26,7 +26,6 @@ export default function TaskContainer() {
       return note.value === selectedFilter;
     }
   });
-
 
   const tasksLocal = JSON.stringify(allNotes);
   localStorage.setItem("task", tasksLocal);
