@@ -18,7 +18,10 @@ export default function NewTask({
   };
 
   return (
-    <div id={id} className=" h-12 border border-[#071C3B] m-2 flex flex-nowrap">
+    <div
+      id={id}
+      className=" h-12 border border-[#071C3B] m-2 flex flex-nowrap box-border h-auto"
+    >
       <div
         className={
           check
@@ -26,12 +29,12 @@ export default function NewTask({
             : "bg-white w-full text-xl flex justify-between"
         }
       >
-        <span className="p-2">{task}</span>
+        <p className="p-2">{task}</p>
         <button
           className={
             check
-              ? "bg-[#FEEBC3] w-20 px-0 h-full border-l-2 border-[#3F7EA1]"
-              : "bg-[#D99951] w-20"
+              ? "bg-[#FEEBC3] min-w-[80px] px-0 h-full border-l-2 border-[#3F7EA1]"
+              : "bg-[#D99951] min-w-[80px] "
           }
           onClick={handleButtonCheck}
           id={id}

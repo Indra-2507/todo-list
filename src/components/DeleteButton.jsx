@@ -15,7 +15,7 @@ export default function DeleteButton({ setAllNotes, id, task }) {
 
   return (
     <>
-      <button className="bg-[#3F7EA1] w-20" onClick={handleOpenModal}>
+      <button className="bg-[#3F7EA1] min-w-[80px]" onClick={handleOpenModal}>
         <AiOutlineDelete className="m-auto text-2xl" />
       </button>
       <ModalWindows
