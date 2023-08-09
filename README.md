@@ -2,7 +2,7 @@
 
 To Do List es el proyecto final de la cuarta unidad de "Introducción al Desarrollo Front-end" dictada por ADA ITW.
 
-Este proyecto está desarrollado con concocimientos de HTML, CSS, Tailwind, Javascript y React js.
+Este proyecto está desarrollado con conocimientos de HTML, CSS, Tailwind, Javascript y React js.
 
 El proyecto terminado puede verse en este enlace [link](https://todo-list-nine-eta-35.vercel.app/).
 
@@ -17,7 +17,7 @@ Cuando el usuario ingresa por primera vez a la plataforma, verá lo siguiente
 
 ### Agregando tareas
 
-El usuario podrá agregar todas las tareas que desee. Podrá hacerlo desde el input "Tarea" y posteriormente, apretar el boton send, que se encuentra en el centro de la página.
+El usuario podrá agregar todas las tareas que desee. Podrá hacerlo desde el input "Tarea" y posteriormente, apretar el boton enviar, que se encuentra en el centro de la página.
 
 Una vez hecho esto, el usuario verá reflejada la tarea en el centro de la Página.
 ![toDo con tareas](https://github.com/Indra-2507/todo-list/assets/121632953/d93e8347-4471-4584-b536-69d220bfcb6b)
