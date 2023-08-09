@@ -6,11 +6,11 @@
   font-family: "Borel", cursive;
 }
 
-.eduSaType {
-  font-family: "Edu SA Beginner", cursive;
+.caveatType {
+  font-family: 'Dancing Script', cursive;
 }
 
-.eduSaTypeTitle {
-  font-family: "Edu SA Beginner", cursive;
-  font-weight: 500;
+.caveatTypeTitle {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
 }

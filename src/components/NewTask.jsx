@@ -25,7 +25,7 @@ export default function NewTask({
       <div
         className={
           check
-            ? "bg-[#FEEBC3] w-full text-xl line-through flex justify-between"
+            ? "bg-[#cccccc] w-full text-xl line-through flex justify-between"
             : "bg-white w-full text-xl flex justify-between"
         }
       >
@@ -33,7 +33,7 @@ export default function NewTask({
         <button
           className={
             check
-              ? "bg-[#FEEBC3] min-w-[80px] px-0 h-full border-l-2 border-[#3F7EA1]"
+              ? "bg-[#cccccc] min-w-[80px] px-0 h-full border-l-2 border-[#D99951]"
               : "bg-[#D99951] min-w-[80px] "
           }
           onClick={handleButtonCheck}

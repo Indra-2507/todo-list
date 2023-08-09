@@ -46,7 +46,7 @@ export default function Form({ setSelectedFilter, setAllNotes }) {
           type="submit"
           className="bg-[#071C3B] text-white rounded-lg w-1/5 m-4 p-2 flex justify-center items-center gap-2"
         >
-          Send
+          Enviar
           <AiOutlineSend />
         </button>
       </div>
